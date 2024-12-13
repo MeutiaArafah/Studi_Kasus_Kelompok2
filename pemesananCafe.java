@@ -23,7 +23,7 @@ public class pemesananCafe {
                     tambahkanPesanan(scanner);
                     break;
                 case 2:
-                    System.out.println("fungsi tampil pesanan");
+                    tampilkanDaftarPesanan();
                     break;
                 case 3:
                     System.out.println("Terimakasih!");
@@ -90,8 +90,43 @@ public class pemesananCafe {
 
             totalHarga = hargaMenu * jumlahItem;
             totalSemuaPesanan += totalHarga;
+
+            daftarPesanan[jumlahPesanan][0] = namaPelanggan; 
+            daftarPesanan[jumlahPesanan][1] = String.valueOf(nomorMeja); 
+            daftarPesanan[jumlahPesanan][2] = namaMenu; 
+            daftarPesanan[jumlahPesanan][3] = String.valueOf(jumlahItem); 
+            daftarPesanan[jumlahPesanan][4] = String.valueOf(totalHarga); 
+            jumlahPesanan++;
         }
         System.out.println("Total harga pesanan: Rp " + totalSemuaPesanan);
 
     }
-}
+    static void tampilkanDaftarPesanan() { 
+        System.out.println("\n===== DAFTAR PESANAN ====="); 
+        for (int i = 0; i < jumlahPesanan; i++) { 
+            System.out.println("Nama Pelanggan: " + daftarPesanan[i][0]); 
+            System.out.println("Nomor Meja: " + daftarPesanan[i][1]); 
+            System.out.println("Detail Pesanan:"); 
+
+            // Menampilkan detail pesanan 
+            for (int j = i; j < jumlahPesanan; j++) { 
+                if (daftarPesanan[i][0].equals(daftarPesanan[j][0])) { 
+                    System.out.printf("- %s x %s = Rp %s\n", 
+                        daftarPesanan[j][2], // Nama Menu
+                        daftarPesanan[j][3], // Jumlah Item
+                        daftarPesanan[j][4]); // Total Harga
+                }
+            }
+            // Menghitung total harga pesanan 
+            int totalHargaPesanan = 0; 
+            for (int j = i; j < jumlahPesanan; j++) { 
+                if (daftarPesanan[i][0].equals(daftarPesanan[j][0])) { 
+                        totalHargaPesanan += Integer.parseInt(daftarPesanan[j][4]); 
+                    } 
+                } 
+                        System.out.println("Total Harga Pesanan: Rp " + totalHargaPesanan); 
+                        System.out.println("------------------------------"); 
+                    } 
+                }
+            }   
+
