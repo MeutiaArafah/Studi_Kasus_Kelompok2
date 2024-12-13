@@ -81,10 +81,7 @@ public class pemesananCafe {
                 continue;
             }
             System.out.print("Masukkan jumlah item untuk " + namaMenu + ": ");
-            int jumlahItem = Integer.parseInt(scanner.nextLine());
-
-           
-
+            int jumlahItem = scanner.nextInt();           
         }
     }
 
