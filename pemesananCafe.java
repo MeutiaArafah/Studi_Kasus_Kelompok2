@@ -50,29 +50,33 @@ public class pemesananCafe {
             System.out.println("3. Teh Tarik - Rp 12000");
             System.out.println("4. Mie Goreng - Rp 18000");
             System.out.print("Pilih menu (masukkan nomor menu, atau 0 untuk selesai): ");
-
-            int pilihanMenu = Integer.parseInt(scanner.nextLine());
+            int pilihanMenu = scanner.nextInt();
 
             if (pilihanMenu == 0) {
                 break;
             }
 
-            String namaMenu = "";
-            int hargaMenu = 0;
+            String namaMenu;
+            int hargaMenu;
 
-            if (pilihanMenu == 1) {
+            switch (pilihanMenu) {
+                case 1:
                 namaMenu = "Kopi Hitam";
                 hargaMenu = 15000;
-            } else if (pilihanMenu == 2) {
+                break;
+                case 2: 
                 namaMenu = "Latte";
                 hargaMenu = 22000;
-            } else if (pilihanMenu == 3) {
+                break;
+                case 3: 
                 namaMenu = "Teh Tarik";
                 hargaMenu = 12000;
-            } else if (pilihanMenu == 4) {
+                break;
+                case 4:
                 namaMenu = "Mie Goreng";
                 hargaMenu = 18000;
-            } else {
+                break;
+                default:
                 System.out.println("Menu tidak valid.");
                 continue;
             }
