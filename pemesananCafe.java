@@ -14,7 +14,7 @@ public class pemesananCafe {
         System.out.println("Pilih Menu:");
     }
 
-    static void tambahkanPesanan() {
+    static void tambahkanPesanan(Scanner Scanner) {
         System.out.print("Masukkan nama pelanggan: ");
         String namaPelanggan = scanner.nextLine();
 
