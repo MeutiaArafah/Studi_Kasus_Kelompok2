@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class pemesananCafe {
-
+    // nama pelanggan
     static String[][] daftarPesanan = new String[100][5];
     static int jumlahPesanan = 0;
 
@@ -38,54 +38,60 @@ public class pemesananCafe {
     static void tambahkanPesanan(Scanner scanner) {
         System.out.print("\nMasukkan nama pelanggan: ");
         String namaPelanggan = scanner.nextLine();
-
         System.out.print("Masukkan nomor meja: ");
         int nomorMeja = scanner.nextInt();
 
-        int totalHargaPesanan = 0;
+        System.out.println("\n===== MENU KAFE =====");
+        System.out.println("1. Kopi Hitam - Rp 15000");
+        System.out.println("2. Latte - Rp 22000");
+        System.out.println("3. Teh Tarik - Rp 12000");
+        System.out.println("4. Mie Goreng - Rp 18000");
+
+        String namaMenu;
+        int hargaMenu, jumlahItem, totalHarga = 0, totalSemuaPesanan = 0;
+
         while (true) {
-            System.out.println("\n===== MENU KAFE =====");
-            System.out.println("1. Kopi Hitam - Rp 15000");
-            System.out.println("2. Latte - Rp 22000");
-            System.out.println("3. Teh Tarik - Rp 12000");
-            System.out.println("4. Mie Goreng - Rp 18000");
-            System.out.print("Pilih menu (masukkan nomor menu, atau 0 untuk selesai): ");
+            System.out.print("\nPilih menu (masukkan nomor menu, atau 0 untuk selesai): ");
             int pilihanMenu = scanner.nextInt();
 
             if (pilihanMenu == 0) {
+                System.out.println("\nPesanan berhasil ditambahkan");
                 break;
             }
-
-            String namaMenu;
-            int hargaMenu;
 
             switch (pilihanMenu) {
                 case 1:
-                namaMenu = "Kopi Hitam";
-                hargaMenu = 15000;
-                break;
-                case 2: 
-                namaMenu = "Latte";
-                hargaMenu = 22000;
-                break;
-                case 3: 
-                namaMenu = "Teh Tarik";
-                hargaMenu = 12000;
-                break;
+                    namaMenu = "Kopi Hitam";
+                    hargaMenu = 15000;
+                    break;
+                case 2:
+                    namaMenu = "Latte";
+                    hargaMenu = 22000;
+                    break;
+                case 3:
+                    namaMenu = "Teh Tarik";
+                    hargaMenu = 12000;
+                    break;
                 case 4:
-                namaMenu = "Mie Goreng";
-                hargaMenu = 18000;
-                break;
+                    namaMenu = "Mie Goreng";
+                    hargaMenu = 18000;
+                    break;
                 default:
-                System.out.println("Menu tidak valid.");
-                continue;
+                    System.out.println("Menu tidak valid.");
+                    continue;
             }
             System.out.print("Masukkan jumlah item untuk " + namaMenu + ": ");
-            int jumlahItem = Integer.parseInt(scanner.nextLine());
+            jumlahItem = scanner.nextInt();
 
-           
+            if (jumlahItem <= 0) {
+                System.out.println("Silakan input jumlah item ulang");
+                continue;
+            }
 
+            totalHarga = hargaMenu * jumlahItem;
+            totalSemuaPesanan += totalHarga;
         }
-    }
+        System.out.println("Total harga pesanan: Rp " + totalSemuaPesanan);
 
+    }
 }
