@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class pemesananCafe {
-    
+
     static String[][] daftarPesanan = new String[100][5];
     static int jumlahPesanan = 0;
 
@@ -9,7 +9,7 @@ public class pemesananCafe {
         Scanner scanner = new Scanner(System.in);
         int pilihan;
 
-        do{
+        do {
             System.out.println("\n===== MENU UTAMA =====");
             System.out.println("1. Tambah Pesanan");
             System.out.println("2. Tampilkan Daftar Pesanan");
@@ -20,23 +20,23 @@ public class pemesananCafe {
 
             switch (pilihan) {
                 case 1:
-                    System.out.println("tambah pesan");;
+                    tambahkanPesanan(scanner);
                     break;
                 case 2:
                     System.out.println("fungsi tampil pesanan");
                     break;
-                case 3: 
-                System.out.println("Terimakasih!");
-                break;
-            
+                case 3:
+                    System.out.println("Terimakasih!");
+                    break;
+
                 default:
-                System.out.println("Pilihan tidak valid!");
+                    System.out.println("Pilihan tidak valid!");
             }
         } while (pilihan != 3);
-
+    }
 
     static void tambahkanPesanan(Scanner scanner) {
-        System.out.print("Masukkan nama pelanggan: ");
+        System.out.print("\nMasukkan nama pelanggan: ");
         String namaPelanggan = scanner.nextLine();
 
         System.out.print("Masukkan nomor meja: ");
@@ -79,13 +79,9 @@ public class pemesananCafe {
             System.out.print("Masukkan jumlah item untuk " + namaMenu + ": ");
             int jumlahItem = Integer.parseInt(scanner.nextLine());
 
-            if (jumlahItem <= 0) {
-                System.out.println("Jumlah item harus lebih dari 0.");
-                continue;
-            }
+           
 
         }
     }
 
-}
 }
