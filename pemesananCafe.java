@@ -90,8 +90,15 @@ public class pemesananCafe {
 
             totalHarga = hargaMenu * jumlahItem;
             totalSemuaPesanan += totalHarga;
+
+            daftarPesanan[jumlahPesanan][0] = namaPelanggan; 
+            daftarPesanan[jumlahPesanan][1] = String.valueOf(nomorMeja); 
+            daftarPesanan[jumlahPesanan][2] = namaMenu; 
+            daftarPesanan[jumlahPesanan][3] = String.valueOf(jumlahItem); 
+            daftarPesanan[jumlahPesanan][4] = String.valueOf(totalHarga); 
+            jumlahPesanan++;
         }
         System.out.println("Total harga pesanan: Rp " + totalSemuaPesanan);
 
     }
-} 
+}
