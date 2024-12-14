@@ -23,7 +23,7 @@ public class pemesananCafe {
                     tambahkanPesanan(scanner);
                     break;
                 case 2:
-                    System.out.println("fungsi tampil pesanan");
+                    tampilkanDaftarPesanan();
                     break;
                 case 3:
                     System.out.println("Terimakasih!");
