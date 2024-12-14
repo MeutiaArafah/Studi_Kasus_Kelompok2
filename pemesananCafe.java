@@ -109,23 +109,18 @@ public class pemesananCafe {
             System.out.println("Detail Pesanan:"); 
 
             // Menampilkan detail pesanan 
+            int totalHargaPesanan = 0; 
             for (int j = i; j < jumlahPesanan; j++) { 
                 if (daftarPesanan[i][0].equals(daftarPesanan[j][0])) { 
+                    totalHargaPesanan += Integer.parseInt(daftarPesanan[j][4]);
                     System.out.printf("- %s x %s = Rp %s\n", 
                         daftarPesanan[j][2], // Nama Menu
                         daftarPesanan[j][3], // Jumlah Item
                         daftarPesanan[j][4]); // Total Harga
                 }
             }
-            // Menghitung total harga pesanan 
-            int totalHargaPesanan = 0; 
-            for (int j = i; j < jumlahPesanan; j++) { 
-                if (daftarPesanan[i][0].equals(daftarPesanan[j][0])) { 
-                        totalHargaPesanan += Integer.parseInt(daftarPesanan[j][4]); 
+            System.out.println("Total Harga Pesanan: Rp " + totalHargaPesanan); 
+            System.out.println("------------------------------"); 
                     } 
-                } 
-                        System.out.println("Total Harga Pesanan: Rp " + totalHargaPesanan); 
-                        System.out.println("------------------------------"); 
-                    } 
-                }
-            }   
+                }          
+           } 
